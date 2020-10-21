@@ -1,0 +1,33 @@
+{
+  "name": "covid-data-api",
+  "version": "1.0.0",
+  "description": "API RESTful de acceso a datos de Covid por zonas sanitarias",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Inixio Amillano Casteig",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "charset-detector": "0.0.2",
+    "cors": "^2.8.5",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fetch": "^1.1.0",
+    "fs": "0.0.1-security",
+    "http": "0.0.1-security",
+    "https": "^1.0.0",
+    "iconv-lite": "^0.6.2",
+    "mongoose": "^5.10.7",
+    "mongoose-date-format": "^1.2.0",
+    "multer": "^1.4.2",
+    "node-cron": "^2.0.3",
+    "node-fetch": "^2.6.1",
+    "postman-request": "^2.88.1-postman.26",
+    "request": "^2.88.2",
+    "sync-fetch": "^0.2.0"
+  }
+}
