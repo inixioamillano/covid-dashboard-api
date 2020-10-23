@@ -10,6 +10,10 @@ Para el desarrollo sólo necesitarás Node.js y NPM (Node Package Manager, el ge
 
 Este API REST ofrece acceso y almacenaje de datos diarios sobre la evolución del Covid en distintas zonas sanitarias
 
+## Demo
+
+Puedes encontrar el proyecto funcionando en [Datos Covid | Navarra](https://covidnavarra.herokuapp.com)
+
 ## Lanzar el proyecto
 Para lanzar el proyecto ejecuta `node index.js`. Antes de la primera ejecución debes ejecutar `npm install` para instalar todos los paquetes necesarios
 
