@@ -1,3 +1,6 @@
+// (c) 2020 Inixio Amillano Casteig
+// Este código es de licencia GPL v3 (véase el fichero LICENSE para más detalles)
+
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -111,7 +114,7 @@ app.post('/zonasanitaria', async (req, res) => {
                 const ultimos14Dias = ultimosXDias(datosDiarios, 13) + infectadosHoy;
                 const ia7 = ultimos7Dias*100000/habitantes;
                 const ia14 = ultimos14Dias*100000/habitantes;
-                const dato = new DatoDiario({infectadosHoy, acumulados, ultimos7Dias, ultimos14Dias, ia7, ia14, fecha});
+                const dato = new DatoDiario({infectadosHoy, acumulados, ia7, ia14, fecha});
                 datosDiarios.push(dato);
             })    
             await DatoDiario.insertMany(datosDiarios)
