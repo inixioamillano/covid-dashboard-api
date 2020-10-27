@@ -94,6 +94,7 @@ app.post('/zonasanitaria', async (req, res) => {
     if (auth !== process.env.AUTH){
         return res.status(400).json({err: "No tienes acceso"});
     }
+    let datosDiarios = [];
     try {
         const csv = require('csvtojson')
         csv({
@@ -118,12 +119,13 @@ app.post('/zonasanitaria', async (req, res) => {
                 datosDiarios.push(dato);
             })    
             await DatoDiario.insertMany(datosDiarios)
-            const zona = new ZonaSanitaria({nombre, code, habitantes, datosDiarios});
-            await zona.save();
-            res.json(zona);
         })
     } catch (e) {
         return res.status(500).json({err: "Ha ocurrido un error. Por favor, inténtalo de nuevo más tarde", e});
+    } finally {
+        const zona = new ZonaSanitaria({nombre, code, habitantes, datosDiarios});
+        await zona.save();
+        res.json(zona);
     }
 })
 
